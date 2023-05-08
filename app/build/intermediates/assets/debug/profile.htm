@@ -1,0 +1,234 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>TAKHFIF2 020</title>
+    <script src="js/jquery-1.8.2.js"></script>
+    <script src="js/jquery-ui.js"></script>
+ 
+    <link href="css/bz-style.css" rel="stylesheet">  
+    <style type="text/css">@import url("fonts/aaa.css");</style>
+    <script type="text/javascript" src="js/ul.js"></script> 
+    <script type="text/javascript" src="js/parsePersian.js"></script> 
+    <meta charset="UTF-8"> 
+
+  <link rel="stylesheet" href="css/general.css" media="all" />
+  <script type="text/javascript" src="js/jquery-1.7.2.min.js" ></script>
+  <script type="text/javascript" src="js/general.js" ></script>
+ 
+  <script type="text/javascript" src="js/jquery.fitvids.js"></script>
+  <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+  <script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
+
+  	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="format-detection" content="telephone=no" />
+<!-- 	<meta name="viewport" content="user-scalable=no, initial-scale=5.0, maximum-scale=5.0, minimum-scale=5.0, 
+		width=device-width, height=device-height, target-densitydpi=device-dpi" /> -->
+
+</head>
+
+<body>
+<div id="profile">
+    <div id="wrapper">
+        
+        <div id="main">
+
+                <div  class="profile">
+<div class="box post proInfoBox">
+                            <div class="postHead">
+                                <div class="postTitle">پروفایل کاربری</div>
+<!-- 
+                                 <div class="acco">
+                                      <div class="accoHead itemBox"> انتخاب ها<span></span></div>
+                                      <div class="accoCon">
+                                           <div class="accoIn">
+                                                <ul class="proTools">
+                                                    <li><a title="راهنمای سیستم" id="Help" href="http://www.bazar2020.ir/Help/Default.aspx">راهنمای سیستم</a></li>
+                                                    <li><a title="گزارش تخلف" id="report" href="http://www.bazar2020.ir/ContactUs.aspx">گزارش تخلف</a></li>
+                                                    <li><a title="ثبت سریع محصول" id="quick" href="http://www.bazar2020.ir/AddProducts.aspx">ثبت سریع محصول</a></li>
+                                                    <li><a title="راهنمای درج محصول" id="A1" href="http://www.bazar2020.ir/Help/prod-1675/new-247.aspx">راهنمای درج محصول</a></li>
+                                                    <li><a title="ایجاد فروشگاه" id="A2" href="http://www.bazar2020.ir/UserPanel.aspx">ایجاد فروشگاه</a></li>
+                                                </ul>
+                                           </div>
+                                      </div>
+                                 </div> -->
+
+                            </div>
+                            <div class="postCon">
+                                <div class="innerPostCon">
+
+    <div style="padding: 10px 10px 0; text-align: justify; line-height: 1.6em;" id="ctl00_ContentPlaceHolder1_Desc">
+    </div>
+    <div id="ctl00_ContentPlaceHolder1_ProdForm">
+        <p id="UserMsg"></p>
+        <form class="FrmMain" method="post" name="FrmReg" id="FrmReg">
+            <div style="position: relative">
+                <input type="hidden" name="Action" id="Action">
+                <input type="hidden" name="AjaxAction" id="AjaxAction">
+                <input type="hidden" value="767" name="UID" id="UID">
+                <div >
+                    <table cellspacing="0" cellpadding="3" border="0"  class="Table_ActiveForm profileTable">
+                        <tbody>
+                            <tr>
+                                <td id="imageCover">
+                                    <img class="img_UserImg" src="" onerror="onerrorimg(this)" id="profileImg">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="profileName">
+                                        <span class="userName"></span> (شماره کاربری : <span class="userId"></span>)
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span >
+                                        <a title="" href="" id="profileView">مشاهده فروشگاه</a>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span >میزان رضایت خریداران : <span style="color:#900;"> <img class="img_RatingStr" alt="Rate" src="http://www.bazar2020.ir/Images/Rate/Stars_4.gif"></span>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>تعداد کالاهای درحال فروش : <span class="profileValue SellsProd">28 کالا  </span>
+                                </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>تعداد خریداران قبلی : <span  class="Buyers">1</span> نفر
+                                    </span>
+                                    <br>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="addres">
+                                        تهران/تهران
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>
+                                        <div onclick="$('#LightBoxDiv').show(1000);" class="link messageToProfile">ارسال پیام</div>
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td style="text-align: center" id="FrmFooter" colspan="4">
+                                    <div class="br"></div>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <div class="comPanel">
+                    <div class="title">
+                        نظرات کاربران
+                    </div>
+                    <div class="combody">
+  
+                    </div>
+                </div>
+            </div>
+        </form>
+        <iframe width="0" height="0" frameborder="0" name="iFrm1" id="iFrm1" src=""></iframe>
+    </div>
+
+
+                                </div>
+                                <div class="br"></div>
+                            </div>
+                        </div>
+                </div>
+
+
+
+
+        </div>
+    </div>
+     
+</div>
+
+
+<div class="div_comment_sample" style="display:none;">
+  <div class="div_comment">
+      <div class="divImg"> 
+      </div>
+      <div class="divBody">
+          <div class="senderName">
+            $txt_senderName
+          </div>
+          <div class="desc">
+            $txt_desc
+          </div>
+          <div class="date">$txt_date</div> 
+      </div>
+     <div style="clear: both"></div>
+  </div>                
+</div>
+
+</body>
+
+</html>
+<script>
+
+function onerrorimg(item)
+{
+    item.src="";
+}
+
+var QueryString=GetQueryString();
+if(!QueryString.id)QueryString.id="50";
+
+LoadGetJson(urlsite_bz+"/WService/?Action=Profile&type=type&showimage=2&UserId="+QueryString.id,GetProFile);
+//تا کنون فروشی نداشته اند
+function GetProFile(val)
+{
+    var it=val.items[0];
+    $(".userId").html(it.id);
+    $(".userName").html(it.StoreName); 
+    $(".img_UserImg").attr("src",it.UserImg);
+
+    if(it.RatingStr.indexOf(".")>0)
+       $(".img_RatingStr").attr("src",it.RatingStr);
+       
+    $(".SellsProd").html(it.SellsProd+ppt(" کالا"));
+    $(".Buyers").html(it.Buyers);
+    $(".addres").html(it.Province + "/" + it.City);
+    //StoreName
+}
+//http://www.bazar2020.ir/WService/default.aspx?app_test=1&Action=CommentList&module=Prod&type=Rating&usrid=&AutoLang=FA&showimage=2&sort=1&fromrec=0&maxno=20&cat=&scat=&id=&pid=&rate=&cmd=&relid=767
+
+
+LoadGetJson(urlsite_bz+"/WService/default.aspx?app_test=1&Action=CommentList&module=Prod&type=Rating&usrid=&AutoLang=FA&showimage=2&sort=1&fromrec=0&maxno=20&cat=&scat=&id=&pid=&rate=&cmd=&relid="+QueryString.id,GetCommentList);
+
+function GetCommentList(val)
+{
+    var it=val.items;
+    var sm_box =$(".div_comment_sample").html();
+    var inner_combody="";
+    if(it==undefined)return;
+    
+    for(var i=0;i<it.length;i++)
+    {
+      var tml_combody=sm_box
+      .replace("$txt_senderName",ppt(it[i].alias))
+      .replace("$txt_desc",ppt(it[i].commenttext))
+      .replace("$txt_date",ppt(it[i].sendDate))
+      ;
+      
+      inner_combody+=tml_combody;
+    }
+    $(".combody").html(inner_combody);
+}
+</script>

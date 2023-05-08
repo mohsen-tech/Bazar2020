@@ -1,0 +1,208 @@
+<!DOCTYPE HTML>
+
+<html style="height: 100%;">
+
+<head>
+	<title>TAKHFIF2 020</title>
+	<link rel="stylesheet" href="css/general.css" media="all" />
+	<script type="text/javascript" src="js/jquery-1.7.2.min.js" ></script>
+	<script type="text/javascript" src="js/general.js" ></script>
+
+    <link href="style.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+
+    <style type="text/css">@import url("fonts/aaa.css");</style> 
+    <script type="text/javascript" src="js/ul.js"></script>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="js/parsePersian.js"></script>
+    <script type="text/javascript" src="js/jquery.countdown.js"></script>
+
+    <meta charset="UTF-8"> 
+    <meta id='maxscale' name='viewport' content='maximum-scale=0.0'>
+     
+</head>
+
+<body>
+
+<div class="SampleItems" style="display:none;">
+	<a class="post box"  onclick="Items_OnClick(xId)" >
+		<div class="imgWrapp" >
+			<img src="images/sample.jpg"/>
+		</div>
+		<div class="postTitle fieldX">fastfoothi</div>
+		<div class="fieldX">
+			<div class="mainCOST">ghamatToman</div>
+			<div class="oldCOST"></div>
+			<div class="br"></div>
+		</div>
+		<div class="fieldX">
+			<div class="offX">   <span>shahr</span>&nbsp;mantaghe
+				<div class="sellCount expireCounter" finalDate='2015/3/16'>tovzih1</div>
+			</div>
+			<div class="br"></div>
+		</div>
+	</a>
+</div>
+
+
+
+
+
+
+<div id="allss" class="">
+    <div id="wrapper" class="scrollA"> 
+        <div id="main" class="ListItems ">
+		
+            
+		</div>	
+    </div>
+  
+</div>
+
+
+
+
+
+
+
+<script>
+//
+
+
+var QueryString=GetQueryString();
+
+if(QueryString.cat==undefined)
+   QueryString.cat=11;
+
+
+var fromrec=0;
+$(".ListItems").empty();
+window.randomp=(~~(Math.random()*6)+1);
+GetListProductAndCats(fromrec);
+
+var startget=0;
+$("#wrapper").scroll(function(v) {
+	if ((this.scrollTop+this.clientHeight)==this.scrollHeight)
+	{
+		startget=startget;
+		startget=startget;
+		
+		if(startget==0)
+		{
+		 	startget=1;
+		 	fromrec+=10;
+		 	GetListProductAndCats(fromrec);
+		}
+	}
+});
+ 
+
+function GetListProductAndCats(fromrec)
+{
+	if(QueryString.sorting){
+	   var surl=urlsite_bz+"/WService/?Action=Prods&showimage=2&creatorcity=2774&selltype=All&fromrec="+fromrec+"&maxno=10&sort="+window.randomp;
+       LoadGetJson(surl,GetListProduct);
+       return;
+	}
+	
+	if(QueryString.search)
+    {
+        var surl=urlsite_bz+"/WService/"+decodeURIComponent(QueryString.search);
+        LoadGetJson(surl,GetListProduct);
+        return;
+    }
+    
+    if(QueryString.cat)
+    {
+        var surl=urlsite_bz+"/WService/?Action=Prods&type=Prod&showimage=2&maxno=10&fromrec="+fromrec+"&cat="+QueryString.cat;
+        LoadGetJson(surl,GetListProduct);
+        return;
+    }
+
+    if(QueryString.city)
+    {
+        var burl=urlsite_bz+"/wservice/default.aspx?Action=Items&showimage=2&city="+QueryString.city;
+        if(QueryString.area)
+           burl=urlsite_tk+"/wservice/default.aspx?Action=Items&showimage=2&city="+QueryString.city+"&area="+QueryString.area;
+             
+        LoadGetJson(burl,GetListProduct);
+    }
+    else
+    {
+        LoadGetJson(urlsite_bz+"/wservice/default.aspx?app_test=1&Action=Items&module=Cnt&type=GiftCard&usrid=&AutoLang=FA&showimage=2&sort=1&fromrec="+fromrec+"&maxno=10&cat="+QueryString.cat+"&scat=&id=&pid=&relid=&rate=&cmd=",GetListProduct);
+    }
+}
+
+ 
+
+ 
+
+function GetListProduct(val)
+{  
+    var List_itemsSample = document.getElementsByClassName("SampleItems")[0].innerHTML;
+ 
+    var rows="";
+    var ob=val.items; 
+    if(!val.items)
+	{
+		$(".ListItems").append("<div class='notfindProd'>"+"موردی یافت نشد"+"</div>"); 
+		return; 
+	}    
+
+    for(var i=0;i<ob.length;i++)
+    {
+		var tovzih1="";
+		if(ob[i].selltype=="M") 
+		{ 
+			ob[i].price=tovzih1=ppt("مزایده");
+		}
+		else{
+			ob[i].price+=ppt(" ﺗﻮﻣﺎﻥ");
+		}
+        var a_row=List_itemsSample
+        .replace("fastfoothi",ppt(ob[i].name))
+        .replace("_ximg",ob[i].icon)
+        .replace("shahr",ppt(ob[i].province))
+        .replace("mantaghe",ppt(ob[i].city))
+        .replace("ghamatToman",ob[i].price) 
+        .replace("tovzih1",tovzih1) 
+        .replace("images/sample.jpg",ob[i].icon) 
+        .replace("xId",ob[i].id) 
+        .replace("xId",ob[i].id) 
+        .replace("xId",ob[i].id) 
+        ;
+        rows=rows+a_row;
+    }
+    //adType
+    $(".ListItems").append(rows); 
+}
+
+ 
+function Items_OnClick(val)
+{
+   ChengeUrl("bz_a_product.html#id="+val); 
+}
+
+
+$(document).ready(function () {
+	$('.expireCounter').each(function(){
+		
+//		$(this).countdown($(this).attr('finalDate'))
+// 			.on('update.countdown', function (event) {
+// 				$(this).html(event.strftime(
+// 					'<span>%D <em>روز</em></span>' +
+// 					'<span>%H <em>ساعت</em></span>' +
+// 					'<span>%M <em>دقیقه</em></span>' +
+// 					'<span>%S <em>ثانیه</em></span>'));
+// 				var hhh=$(this).html();
+// 				hhh=hhh;
+// 			});
+
+	});
+
+});
+</script>
+
+</body>
+
+</html>

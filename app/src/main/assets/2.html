@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+<!--     <link href='style.css' rel='stylesheet'> -->
+    <link href='css/font-awesome.min.css' rel='stylesheet'>
+<!--     <link href='css/tk-style.css' rel='stylesheet'> -->
+
+    <style type='text/css'>@import url('fonts/aaa.css');</style>
+    <script type='text/javascript' src='js/ul.js'></script>
+
+    <script type="text/javascript" src="js/ppt2.js"></script>
+
+    <script type="text/javascript" src="js/parsePersian.js"></script>
+
+    <script type='text/javascript' src='jquery.min.js'></script>
+    <meta charset='UTF-8'>   
+    <style> 
+        .txt1
+        {
+            width: 100%;
+            heigth: 660px;
+            font-family: f9;
+         }
+
+        .txt2
+        {
+            width: 100%;
+            heigth: 660px;
+            font-family: f9;
+         }
+    </style>
+</head>
+
+<body class='bodystyle p2'>
+ 
+
+<textarea class="txt1" style="height: 250px;" placeholder="Input">
+توجه : طبق قوانین سایت،استفاده از آدرس و یا تلفن در پیام های ارسالی مجاز نیست.پیام های شما پس از تایید مدیریت ارسال خواهد شد و در صورت مشاهده تخلف ، حساب کاربری شما مسدود خواهد شد.
+</textarea>
+<hr>
+<textarea class="txt2" style="height: 250px;" placeholder="Output">Output</textarea>
+
+ 
+
+<hr>
+<button class="BtnConvert" onClick="ConvertHtml();">
+تبدیل</button>
+
+<script type="text/javascript">
+
+ function ConvertHtml()
+ {
+         var mtxt=$(".txt1").val(); 
+         mtxt=ReplaceAll(mtxt,"،","~1***~");
+         mtxt=ReplaceAll(mtxt,".","~2***~");
+ 
+         var vv=parsePersian(mtxt); 
+          
+         vv=ReplaceAll(vv,"~1***~",",")
+         vv=ReplaceAll(vv,"~2***~",".");
+
+         $(".txt2").text(vv);
+
+         // $(".txt1").val("");
+ }
+
+ function ReplaceAll(str,olds,news)
+ {
+     while(str.indexOf(olds)>-1)
+     {
+         str=str.replace(olds,news);
+     }
+     return str;
+ }
+ 
+    var list_txtfa=$(".txtfa");
+    for(var il=0;il<list_txtfa.length;il++)
+    {
+        $(list_txtfa[il]).html(parsePersian($(list_txtfa[il]).text()));
+    } 
+</script>
+</body>
+
+</html>

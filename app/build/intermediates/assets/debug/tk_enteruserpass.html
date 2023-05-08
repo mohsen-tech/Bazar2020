@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <link href="style.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <style type="text/css">@import url("fonts/aaa.css");</style>
+    <script type="text/javascript" src="js/ul.js"></script>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="js/parsePersian.js"></script>
+    <meta charset="UTF-8">
+    <style>
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=0">
+    <meta name='viewport' content='maximum-scale=0'>
+    
+    <meta id='maxscale' name='viewport' content='maximum-scale=0.0'>
+</head>
+
+<body>
+<div style="text-align: center;">  
+<div>
+    <img class="img_tb_logo" src="img\bazar.jpg">
+    <br>
+    <input type="text" id="upemail" placeholder="E-Mail" type="text">
+    <br>
+    <input type="password" id="uppass" placeholder="Password"> 
+    <br>
+    <br>
+    <a href="#"  id="login" class="BtnRegister txtfa" onclick="BtnLogin();">ورود</a> 
+</div>
+ 
+
+<script>
+
+// 	 document.body.onresize = function()
+// 	 {
+// 		var ht="sw: "+document.getElementsByTagName('body')[0].style.width+"  <br>  inW: "+window.innerWidth;
+// 		$(".log1").html(ht);
+// 	 }
+
+    if(window.JSInterface)
+    {
+        window.alert=window.JSInterface.Alert;
+    }
+
+   var QueryString=GetQueryString();
+
+	if(QueryString.f)
+	{
+		$("#uppass").css({"display":"none"});
+		$("#login").html("ﺍﺭﺳﺎﻝ");
+	}
+
+//    msabeghi@gmail.com
+//	  1
+
+   function BtnLogin()
+   { 
+		if(QueryString.f)
+		{
+			var usr=urlsite_bz+"/WService/?Action=Remember&email="+$("#upemail").val(); 
+			LoadGetJson(usr,function(val){
+				if(val==-1)alertt("عملیات ناموفق");
+				if(val==-2)alertt("ایمیل نامعتبر می باشد");
+				if(val>-1)alertt("ایمیل ارسال شد");
+			});
+			return;
+		}
+        window.onresize();
+        var usr=urlsite_bz+"/wservice/?action=Login&usr="+$("#upemail").val()+"&pwd="+$("#uppass").val(); 
+        LoadGetJson(usr,SubLogin);
+   }
+
+   function SubLogin(val)
+   { 
+		if(QueryString.f)
+		{
+		    alertt("ارسال شد ایمیل خود را چک نمایید"); 
+			return;
+		}
+
+       if(parseInt(val.result)==-1)
+       {
+            alertt("اطلاعات ورودی اشتباه");
+            SetDV("usrId","");  
+            SetDV("pass","");
+            SetDV("id","");  
+            SetDV("vname","");  
+            SetDV("nameuser","");  
+
+            JSInterface.ExeFunc(1);
+       }
+       else
+       {
+            var id=parseInt(val.result);
+            var vname=(val.vname);  
+            SetDV("usrId",$("#upemail").val());  
+            SetDV("pass",$("#uppass").val());  
+            SetDV("id",id);  
+            SetDV("nameuser",vname); 
+            ExeFunc(1);
+            alertt("خوش آمدید");
+            //ChengeUrl("tk_prods.html#city="+ encodeURI(city));
+            if(!GoBackHref())
+                SelectItem("home"); 
+       }
+   }
+ 
+
+window.onresize = function() 
+{
+   // if (window.innerHeight >= 820) { /* ... */ }
+   // if (window.innerWidth <= 1280) {  /* ... */ }
+   var hi=window.innerHeight-110-50;
+   var wm=window.innerWidth-1;
+   $(".img_tb_logo").css({"height":hi+"px","max-width":wm+"px"});
+}
+window.onresize();
+
+</script>
+
+<script type="text/javascript">
+ InitFa();
+ 
+function InitFa()
+{
+	var list_txtfa=$(".txtfa");
+	for(var il=0;il<list_txtfa.length;il++)
+	{
+		$(list_txtfa[il]).html(parsePersian($(list_txtfa[il]).text()));
+	} 
+
+	var list_txtfa=$(".txtfa");
+	for(var il=0;il<list_txtfa.length;il++)
+	{
+		$(list_txtfa[il]).html(parsePersian($(list_txtfa[il]).text()));
+	} 
+
+}
+</script>
+	
+<div class='item_row'>
+
+</div>
+</body>
+
+</html>
+

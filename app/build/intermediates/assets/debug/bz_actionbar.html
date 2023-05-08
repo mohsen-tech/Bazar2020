@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html>
+    <head> 
+        <script type='text/javascript' src='js/ul.js'></script> 
+        <script type="text/javascript" src="js/parsePersian.js"></script>
+        <script type='text/javascript' src='jquery.min.js'></script>
+        <link rel='stylesheet' href='css/nav.css'> 
+        <meta charset='UTF-8'>    
+    </head>
+
+<body class='tk_actionbar'>
+
+<div class="toolbar cheight">
+    <div class="IconNav cwidth cheight" onClick="Nav_OnClick()"></div>
+    <div class="IconLocation cwidth cheight" onClick="IconLocation_OnClick()"></div>
+    <div class="IconLogo cheight" onClick="Logo_OnClick()"></div>
+ 
+    <div class="IconUpdate txtfa cwidth cheight" onclick="IconUpdate_OnClick()"></div>
+<!--         <div class="TextUpNew cheight ">نیاز به بروز رسانی</div> -->
+    </div>
+    
+</div>
+
+<script type="text/javascript"> 
+    var sizemenu=31;
+    var QueryString=GetQueryString();
+    if(QueryString.size)sizemenu=QueryString.size;
+    $(".cheight").css({"height":sizemenu});
+    $(".cwidth").css({"width":sizemenu});
+
+    var urlDownload="";
+    $(".IconUpdate").css({"display":"none"});
+    //if(jsi()) setInterval(function(){CheckUpdate(); BtnChLogin();}, 6000); 
+    CheckUpdate();
+    BtnChLogin();
+    
+    function CheckUpdate(){
+        LoadGetJson(urlsite_bz+"/wservice/?Action=Init",function(val,dEnd)
+        { 
+            var verNum=GetVer();
+
+            if(parseInt(val.apkNumber)>verNum)
+            {
+               $(".IconUpdate").css({"display":"block"});
+               urlDownload=val.apkUrl;
+            }
+            else
+            {
+               $(".IconUpdate").css({"display":"none"});
+               urlDownload="";
+            }
+
+        },null,true);
+    }
+
+    function IconLocation_OnClick(){
+        JSInterface.NewPage("tk_pcats_city.html");
+    }
+    
+    function IconUpdate_OnClick(){
+        if(urlDownload!=""){
+            JSInterface.OpenChrome(urlDownload);
+        }
+    }
+    //-575px -1810px
+    function Nav_OnClick(){
+        JSInterface.OpenNav();
+    } 
+
+    var list_txtfa=$(".txtfa");
+    for(var il=0;il<list_txtfa.length;il++)
+    {
+        $(list_txtfa[il]).html(parsePersian($(list_txtfa[il]).text()));
+    } 
+
+
+
+   function BtnChLogin()
+   {
+      if(!(JSInterface.IsEmptyDV("usrId")|JSInterface.IsEmptyDV("pass")))
+      {
+          var usr=urlsite_bz+"/wservice/?action=Login&usr="+JSInterface.GetDV("usrId")+"&pwd="+JSInterface.GetDV("pass"); 
+          //JSInterface.Alert(usr); 
+          LoadGetJson(usr,SubChLogin,null,true);
+      } 
+   }
+
+   function SubChLogin(val)
+   {  
+       if(parseInt(val.result)==-1)
+       { 
+            JSInterface.SetDV("usrId","");  
+            JSInterface.SetDV("pass","");
+            JSInterface.SetDV("id","");  
+            JSInterface.SetDV("vname","");  
+            JSInterface.ExeFunc(1);
+       }
+   }
+
+   function Logo_OnClick(){
+       JSInterface.OpenChrome("http://bazar2020.ir/");
+   }
+</script>
+</body>
+
+</html>

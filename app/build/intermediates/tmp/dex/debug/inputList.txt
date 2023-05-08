@@ -1,0 +1,5 @@
+C:\Users\Amir\AndroidStudioProjects\Bazar2020Project\NavigationDrawerExample1\app\build\intermediates\classes\debug
+C:\Users\Amir\AndroidStudioProjects\Bazar2020Project\NavigationDrawerExample1\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-7965ebdbd610e5cf9e707afeada55581bead887e.jar
+C:\Users\Amir\AndroidStudioProjects\Bazar2020Project\NavigationDrawerExample1\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-c268ceb147e47acfb56e8d335a92bc3a3bdf6aa4.jar
+C:\Users\Amir\AndroidStudioProjects\Bazar2020Project\NavigationDrawerExample1\app\build\intermediates\pre-dexed\debug\classes-3998839c2c0b888139a612fae45b79ccda896fed.jar
+C:\Users\Amir\AndroidStudioProjects\Bazar2020Project\NavigationDrawerExample1\app\build\intermediates\pre-dexed\debug\classes-b11509fcf95b1af9a2a227a0c96ea0a192483ed6.jar

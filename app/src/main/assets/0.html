@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>TAKHFIF2 020</title>
+    <link rel="stylesheet" href="css/general.css" media="all" />
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js" ></script>
+    <script type="text/javascript" src="js/general.js" ></script>
+
+    <link rel="stylesheet" href="css/bz-style.css" media="all" />
+    <link rel="stylesheet" href="css/jquery.bxslider.css" media="all"/>
+    <script type="text/javascript" src="js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
+ 
+    <link href="style.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+
+    <style type="text/css">@import url("fonts/aaa.css");</style> 
+    <script type="text/javascript" src="js/ul.js"></script>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="js/parsePersian.js"></script>
+    <script type="text/javascript" src="js/jquery.countdown.js"></script>
+
+    <meta charset="UTF-8">
+ 
+<style>
+
+</style>
+</head>
+
+<body>
+
+<script>
+        function EncoderPass(date, Password)
+        {  
+            var Str_Output = "";
+            var j = 0;
+            for (var  i = 0; i < date.length; i++)
+            {
+                var vd = date[i].charCodeAt();
+                var vp = Password[j].charCodeAt();
+                j++;
+                if (Password.length <= j) j = 0;
+
+                Str_Output += String.fromCharCode(SumByte(vd, vp));
+            }
+            return Str_Output;
+        }
+
+        function DecoderPass(data,Password)
+        {  
+            var Str_Decode = "";
+            var j = 0;
+            for (var  i = 0; i < data.length; i++)
+            {
+                var vd =data[i].charCodeAt();
+                var vp =Password[j].charCodeAt();
+                j++;
+                if (Password.length <= j) j = 0;
+
+                Str_Decode += String.fromCharCode(MunByte(vd, vp));
+            }
+            return Str_Decode;
+        }
+
+
+        function MunByte(a, b)
+        {
+            var s = a - b;
+            if (s < 0)
+                return (255+s);
+            else
+                return s;
+        }
+		
+        function SumByte(a, b)
+        {
+            var s = a + b;
+            if (s > 255)
+                return (s - 255);
+            else
+                return s;
+        }
+prompt("", (Decoderv(EncoderPass("amir mehrabiani", "dgh"), "123")));
+//prompt("", encodeURIComponent(EncoderPass("amir mehrabiani", "abc")) );
+</script>
+
+    <div class="p1">
+
+      <div class="c1">
+        ch
+      </div>
+
+    </div>
+
+
+</body>
+
+</html>

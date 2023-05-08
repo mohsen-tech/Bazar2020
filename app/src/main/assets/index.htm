@@ -1,0 +1,65 @@
+<link rel="import" href="../paper-button/paper-button.html">
+<link rel="import" href="../paper-calculator/paper-calculator.html">
+
+<polymer-element name="my-element">
+
+  <template>
+    <style>    
+      #section {
+        box-sizing: border-box;
+        width: 420px;
+        height: 630px;
+        left: 210px;
+        top: 70px;
+        position: absolute;
+      }
+      #div {
+        box-sizing: border-box;
+        position: absolute;
+        height: 240px;
+        padding: 24px;
+        color: rgb(255, 255, 255);
+        font-size: 32px;
+        left: 130px;
+        top: 200px;
+        background-color: rgb(255, 235, 59);
+      }
+      #section1 {
+        padding: 24px;
+        font-size: 16px;
+        background-color: rgb(238, 238, 238);
+      }
+      #paper_button {
+        left: 255px;
+        top: 330px;
+        position: absolute;
+      }
+      #paper_calculator {
+        width: 400px;
+        height: 560px;
+        left: -80px;
+        top: -60px;
+        position: absolute;
+      }
+    </style>
+    <section id="section" layout vertical>
+      <section id="section1" hero flex>
+        <span id="span1">Answer here</span>
+        <div id="div" hero>
+          <span id="span">Question</span>
+        </div>
+        <paper-button label="Paper Button" id="paper_button"></paper-button>
+        <paper-calculator responsivewidth="2000px" expression="98556" id="paper_calculator"></paper-calculator>
+      </section>
+    </section>
+  </template>
+
+  <script>
+
+    Polymer({
+      
+    });
+
+  </script>
+
+</polymer-element>

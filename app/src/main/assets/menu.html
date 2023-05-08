@@ -1,0 +1,213 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <script src="js/jquery-1.8.2.js"></script>
+    <script src="js/jquery-ui.js"></script>
+
+    <link href="style.css" rel="stylesheet">
+    <link href="css/bz-style.css" rel="stylesheet">  
+    <style type="text/css">@import url("fonts/aaa.css");</style>
+    <script type="text/javascript" src="js/ul.js"></script> 
+    <script type="text/javascript" src="js/parsePersian.js"></script>
+    <link rel='stylesheet' href='css/menu1.css'>
+    <meta charset="UTF-8"> 
+    <meta id='maxscale' name='viewport' content='maximum-scale=0.0'>
+</head>
+
+<body>
+
+<div class="MainTabs">
+    <ul>
+        <li><a href="#mainTab1">ﺣﺴﺎﺏ ﮐﺎﺭﺑﺮﯼ</a></li>
+        <li><a href="#mainTab2">ﭘﯿﺎﻡ ﻫﺎﯼ ﻣﻦ</a></li>
+<!--         <li><a href="#mainTab3">ﮐﺎﺭﻧﺎﻣﻪ ﻣﻦ</a></li> -->
+        <li><a href="#mainTab4">ﻓﺮﻭﺷﮕﺎﻩ ﻣﻦ</a></li>
+
+    <!--
+    -->
+    </ul>
+
+    <div id="mainTab1">
+        <div class="mainTab1">
+            <ul>
+                <li><a href="#mainTab1_1">ﭘﺮﻭﻓﺎﯾﻞ ﻣﻦ</a></li>
+                <li><a href="#mainTab1_2">ﺗﻐﯿﯿﺮ ﺭﻣﺰ ﻋﺒﻮﺭ</a></li>
+                <li><a href="#mainTab1_3">ﻣﺸﺨﺼﺎﺕ ﺣﺴﺎﺏ ﺑﺎﻧﮑﯽ</a></li> 
+<!--                 <li><a href="#mainTab1_4">ﺷﺎﺭﮊ ﺣﺴﺎﺏ</a></li>  -->
+                <li><a href="#mainTab1_5">ﺑﺮﺩﺍﺷﺖ ﺍﺯ ﺣﺴﺎﺏ</a></li> 
+                <li><a href="#mainTab1_6">ﺻﻮﺭﺕ ﺣﺴﺎﺏ</a></li> 
+                <li><a href="#mainTab1_7">ﻋﻼﻗﻪ ﻣﻨﺪﯼ ﻫﺎ</a></li> 
+            </ul>
+            <div id="mainTab1_1"></div>
+            <div id="mainTab1_2"></div>
+            <div id="mainTab1_3"></div>
+            <div id="mainTab1_4"></div>
+            <div id="mainTab1_5"></div>
+            <div id="mainTab1_6"></div>
+            <div id="mainTab1_7"></div>
+        </div>
+    </div>
+    <div id="mainTab2">
+        <div class="mainTab2">
+            <ul>
+                <li><a href="#mainTab2_1">ﭘﯿﺎﻡ ﻫﺎﯼ ﺩﺭﯾﺎﻓﺘﯽ</a></li>
+                <li><a href="#mainTab2_2">ﭘﯿﺎﻡ ﻫﺎﯼ ﺍﺭﺳﺎﻟﯽ</a></li>
+                <li><a href="#mainTab2_3">ﺍﺭﺳﺎﻝ ﭘﯿﺎﻡ</a></li> 
+            </ul>
+            <div id="mainTab2_1"></div>
+            <div id="mainTab2_2"></div>
+            <div id="mainTab2_3"></div>
+        </div>
+    </div>
+
+    <div id="mainTab3"></div>
+    <div id="mainTab4"></div>
+</div>
+
+<div class="Logs">
+logs...
+</div>
+
+<div class="List_iframe">
+  <iframe class="iframes aiframe_11" style="overflow:hidden" scrolling="no" onload="CheckLoadIframe(this,ErrorLoadIframe,11)" src=""></iframe>
+  <iframe class="iframes aiframe_12" style="overflow:hidden" scrolling="no" onload="CheckLoadIframe(this,ErrorLoadIframe,12)" src=""></iframe>
+  <iframe class="iframes aiframe_13" style="overflow:hidden" scrolling="no" onload="CheckLoadIframe(this,ErrorLoadIframe,13)" src=""></iframe>
+  <iframe class="iframes aiframe_14" style="overflow:hidden" scrolling="no" onload="CheckLoadIframe(this,ErrorLoadIframe,14)" src=""></iframe>
+  <iframe class="iframes aiframe_15" style="overflow:hidden" scrolling="no" onload="CheckLoadIframe(this,ErrorLoadIframe,15)" src=""></iframe>
+  <iframe class="iframes aiframe_16" style="overflow:hidden" scrolling="no" onload="CheckLoadIframe(this,ErrorLoadIframe,16)" src=""></iframe>
+  <iframe class="iframes aiframe_17" style="overflow:hidden" scrolling="no" onload="CheckLoadIframe(this,ErrorLoadIframe,17)" src=""></iframe>
+  <iframe class="iframes aiframe_21" style="overflow:hidden" scrolling="no" onload="CheckLoadIframe(this,ErrorLoadIframe,21)" src=""></iframe>
+  <iframe class="iframes aiframe_22" style="overflow:hidden" scrolling="no" onload="CheckLoadIframe(this,ErrorLoadIframe,22)" src=""></iframe>
+  <iframe class="iframes aiframe_23" style="overflow:hidden" scrolling="no" onload="CheckLoadIframe(this,ErrorLoadIframe,23)" src=""></iframe>
+    <iframe class="iframes aiframe_31" style="overflow:hidden" scrolling="no" onload="CheckLoadIframe(this,ErrorLoadIframe,31)" src=""></iframe>
+  <iframe class="iframes aiframe_41" style="overflow:hidden" scrolling="no" onload="CheckLoadIframe(this,ErrorLoadIframe,41)" src=""></iframe> 
+</div>
+
+<script>
+
+var QueryString=GetQueryString();
+
+if(QueryString.id==undefined)
+   QueryString.id=1;
+
+function ErrorLoadIframe(Status,el)
+{
+   if(!Status){
+      $(el).css({"display":"none"});
+      $(el).attr("src","tk_error_connetion.html"); 
+      $(el).css({"display":"block"});
+   }
+}
+
+$.v={};
+$.v.old_so=-1;
+
+$.v.numberA=1;
+$.v.numberB=2;
+$.v.numberBr=[];
+
+$('.MainTabs').tabs({select:SelectTabs})
+    .addClass('ui-tabs-vertical ui-helper-clearfix');
+
+$('.mainTab1').tabs({select:SelectTabs})
+    .addClass('ui-tabs-vertical ui-helper-clearfix');
+
+$('.mainTab2').tabs({select:SelectTabs})
+    .addClass('ui-tabs-vertical ui-helper-clearfix');
+
+ChangeTab("mainTab1");//defult
+
+function SelectTabs(event,ui)
+{
+	//alert(ui.panel.id);
+	 LoadingStart();
+	 ChangeTab(ui.panel.id,ui.panel);
+}
+
+
+function ChangeTab(val,p){
+    if(val.indexOf("_")<0)
+    {
+        $.v.numberA=parseInt(val.substr(7));
+        if($.v.numberBr.length>=$.v.numberA)
+        {
+            $.v.numberB=$.v.numberBr[$.v.numberA];
+            if($.v.numberBr[$.v.numberA] == undefined) $.v.numberB=1;
+        }
+        else
+            $.v.numberB=1; 
+    }
+    else
+    {
+        $.v.numberA=parseInt(val.substr(7));
+        $.v.numberB=parseInt(val.substr(9));
+        $.v.numberBr[$.v.numberA]=$.v.numberB;
+    }
+
+    NewTabOpen($.v.numberA,$.v.numberB);
+    //$(".Logs").empty().append("  numberA :"+$.v.numberA+"  numberB :"+$.v.numberB);    
+}
+
+function NewTabOpen(a,b)
+{
+    var so=a+""+b;
+    if(so==$.v.old_so)
+    {
+        LoadingStop();
+       return;
+    }
+    $.v.old_so=so;
+    
+    $(".Logs").empty().append(so+" open");
+    $(".iframes").css({"display":"none"}); 
+    CheckLoadIframe($(".aiframe_"+so)[0],function(st){
+      if(st)
+      {
+         $(".aiframe_"+so).css({"display":"block"});
+      }
+      else
+      {
+         $(".aiframe_"+so).attr("src","tk_error_connetion.html"); 
+         $(".aiframe_"+so).css({"display":"block"}); 
+      }
+      
+    });
+    
+    var src = $(".aiframe_"+so).attr("src");
+
+   
+    var srca="";
+    var usrId=QueryString.id;//767;
+    //usrId=767;
+
+    var root=urlsite_bz;//"http://192.168.2.2/bazar";
+    if(so=="11") {$(".List_iframe").css({"height":"700px"}); srca=root+"/mobilepage/EditInformation.aspx?usrId="+usrId;}
+    if(so=="12") {$(".List_iframe").css({"height":"500px"}); srca=root+"/mobilepage/ChangePassword.aspx?usrId="+usrId;}
+    if(so=="13") {$(".List_iframe").css({"height":"500px"}); srca=root+"/mobilepage/BankAccount.aspx?usrId="+usrId;}
+    if(so=="14") {$(".List_iframe").css({"height":"700px"}); srca=root+"/mobilepage/SharzhAccount.aspx?usrId="+usrId;}
+    if(so=="15") {$(".List_iframe").css({"height":"400px"}); srca=root+"/mobilepage/GetFromAccount.aspx?usrId="+usrId;}
+    if(so=="16") {$(".List_iframe").css({"height":"500px"}); srca=root+"/mobilepage/MyBills.aspx?usrId="+usrId;}
+    if(so=="17") {$(".List_iframe").css({"height":"500px"}); srca=root+"/mobilepage/Favorates.aspx?usrId="+usrId;}
+    if(so=="21") {$(".List_iframe").css({"height":"400px"}); srca=root+"/mobilepage/GetAllMsg.aspx?type=1&usrId="+usrId;}
+    if(so=="22") {$(".List_iframe").css({"height":"500px"}); srca=root+"/mobilepage/GetAllMsg.aspx?type=2&usrId="+usrId;}
+    if(so=="23") {$(".List_iframe").css({"height":"500px"}); srca=root+"/mobilepage/SendMessage.aspx?usrId="+usrId;}
+    if(so=="31") {$(".List_iframe").css({"height":"800px"}); srca="file:///android_asset/profile.htm#id=" + usrId; }
+    if(so=="41") {$(".List_iframe").css({"height":"850px"}); srca=root+"/mobilepage/MyStore.aspx?usrId="+usrId;}
+
+    if(src=="")
+    {    
+        if(!jsi()) srca=srca.replace("file:///android_asset/","");
+        
+        $(".aiframe_"+so).attr("src",srca);
+        console.log("Open Adress: " + srca);
+    }
+    else{
+        LoadingStop();
+    }
+}
+</script>
+</body>
+
+</html>

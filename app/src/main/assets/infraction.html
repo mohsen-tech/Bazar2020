@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html style="height:100%">
+<head>
+    <title>TAKHFIF2 020</title>
+    <link rel="stylesheet" href="css/general.css" media="all" />
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js" ></script>
+    <script type="text/javascript" src="js/general.js" ></script>
+
+    <link rel="stylesheet" href="css/bz-style.css" media="all" /> 
+    <script type="text/javascript" src="js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
+ 
+    <link href="style.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+
+    <style type="text/css">@import url("fonts/aaa.css");</style> 
+    <script type="text/javascript" src="js/ul.js"></script>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="js/parsePersian.js"></script>
+    <script type="text/javascript" src="js/jquery.countdown.js"></script>
+
+    <meta charset="UTF-8">
+    <meta id='maxscale' name='viewport' content='maximum-scale=0.0'>
+</head>
+
+<body style="height:100%">
+    <div class="tell_div">
+         <textarea class="tell_emails tell_input" placeholder="لطفا آدرس ایمیل مخاطبان را مشخص کنید (در هر خط یک آدرس ایمیل)"></textarea>
+         <br>
+         <textarea class="tell_text tell_input" placeholder="متن ایمیل"></textarea>
+    </div> 
+
+    <div class="outerButton"> 
+        <button class="stylebutton buttonSava">درج</button>
+    </div> 
+
+<script>
+
+var QueryString=GetQueryString();
+
+if(QueryString.id==undefined)
+    QueryString.id=4259;
+ 
+$(".buttonSava").click(function()
+{
+    alert("The paragraph was clicked.");
+        var desc="dfs"; 
+    
+    var surl=urlsite_bz+"/WService/?action=Report&showimage=2&senderid="+QueryString.id
+    +"&pid="+QueryString.pid
+    +"&pname="+QueryString.pname
+    +"&desc="+desc;
+
+    LoadGetJson(surl,function(v){
+        v=v;
+    });
+});
+
+function Favorites()
+{
+    var desc="dfs"; 
+
+    var surl=urlsite_bz+"/WService/?action=Report&showimage=2&senderid="+QueryString.id
+    +"&pid="+QueryString.pid
+    +"&pname="+QueryString.pname
+    +"&desc="+desc;
+
+    LoadGetJson(surl,function(v){
+        v=v;
+    });
+}
+
+</script>
+</body>
+
+</html>
